@@ -1,13 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
+import ResponsivePageContainer from "../components/containers/responsive-page-container"
 
-import Layout from "../components/layout"
 
 const IndexPage = () => (
-  <Layout>
-    <h1>This is main page ! Hello !</h1>
-    <Link to="/404">Go to page 2</Link>
-  </Layout>
+  <ResponsivePageContainer>
+    <p>Cześć</p>
+  </ResponsivePageContainer>
+
 )
 
 export default IndexPage

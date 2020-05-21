@@ -1,0 +1,21 @@
+@import './../../../styles/main-styles';
+
+.responsive-page-container {
+  width: 100%;
+  padding: 0 5%;
+  height: 100%;
+
+
+  @include mobile {
+    margin: 0;
+    padding: 0;
+  }
+
+  @include tablet {
+    padding: 0 $tabletPadding;
+  }
+
+  @media screen and (max-width: $tablet) {
+
+  }
+}
