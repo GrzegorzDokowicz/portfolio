@@ -11,9 +11,9 @@ const Image = ({fileName, alt =''})=> {
             edges {
               node {
                 childImageSharp {
-                  fluid {
+                  fixed {
                     originalName
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }
@@ -23,15 +23,15 @@ const Image = ({fileName, alt =''})=> {
   `)
 
   const image = data.allFile.edges.find(n => {
-    return n.node.childImageSharp.fluid.originalName.includes(fileName);
+    return n.node.childImageSharp.fixed.originalName.includes(fileName);
   });
     if (!image) { return null; }
 
   return (
     <div>
-      <h1>Hello gatsby-image</h1>
+
       <Img
-        fluid={image.node.childImageSharp.fluid}
+        fixed={image.node.childImageSharp.fixed}
         alt={alt}
       />
     </div>
