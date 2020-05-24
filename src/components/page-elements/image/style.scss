@@ -1,23 +1,7 @@
 @import './../../../styles/main-styles';
 
-.responsive-page-container {
-  width: 100%;
-  padding: 0 5%;
-  height: 100%;
-  background-color: $background-color;
-  display: flex;
-
-
-  @include mobile {
-    margin: 0;
-    padding: 0;
-  }
-
-  @include tablet {
-    padding: 0 $tabletPadding;
-  }
-
-  @media screen and (max-width: $tablet) {
-
-  }
+.image{
+  min-height: 100px;
+  min-width: 100px;
 }
+

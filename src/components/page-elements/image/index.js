@@ -11,9 +11,9 @@ const Image = ({fileName, alt =''})=> {
             edges {
               node {
                 childImageSharp {
-                  fixed {
+                  fluid {
                     originalName
-                    ...GatsbyImageSharpFixed
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -23,14 +23,15 @@ const Image = ({fileName, alt =''})=> {
   `)
 
   const image = data.allFile.edges.find(n => {
-    return n.node.childImageSharp.fixed.originalName.includes(fileName);
+    return n.node.childImageSharp.fluid.originalName.includes(fileName);
   });
     if (!image) { return null; }
 
   return (
     <React.Fragment>
       <Img
-        fixed={image.node.childImageSharp.fixed}
+        className={'image'}
+        fixed={image.node.childImageSharp.fluid}
         alt={alt}
       />
     </React.Fragment>

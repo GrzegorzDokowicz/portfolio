@@ -6,12 +6,14 @@ import Button from "../components/page-elements/button"
 
 
 const IndexPage = () => (
-  <ResponsivePageContainer className={'main-container'}>
-    <Text type={'paragraph'}>
+  <ResponsivePageContainer className={"main-container"}>
+    <Text type={"paragraph"}>
       Cześć
     </Text>
-    <Image fileName={'gatsby-icon.png'}/>
-    <Button onClick={()=>{console.log('click')}} style={['filled-hover']}>
+    <Image fileName={"gatsby-icon.png"}/>
+    <Button onClick={() => {
+      console.log("click")
+    }} style={["filled-hover"]}>
       Przycisk
     </Button>
   </ResponsivePageContainer>
