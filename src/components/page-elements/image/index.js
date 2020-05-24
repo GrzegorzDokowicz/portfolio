@@ -31,7 +31,7 @@ const Image = ({fileName, alt =''})=> {
     <React.Fragment>
       <Img
         className={'image'}
-        fixed={image.node.childImageSharp.fluid}
+        fluid={image.node.childImageSharp.fluid}
         alt={alt}
       />
     </React.Fragment>
