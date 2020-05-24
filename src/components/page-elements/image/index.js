@@ -28,13 +28,12 @@ const Image = ({fileName, alt =''})=> {
     if (!image) { return null; }
 
   return (
-    <div>
-
+    <React.Fragment>
       <Img
         fixed={image.node.childImageSharp.fixed}
         alt={alt}
       />
-    </div>
+    </React.Fragment>
   )
 }
 

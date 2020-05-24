@@ -1,0 +1,51 @@
+@import './../../../styles/main-styles';
+
+.text {
+  font-family: $font-main;
+  font-weight: 500;
+  display: inline-block;
+
+  &--h1 {
+    font-size: $header-fontSize;
+  }
+
+  &--h2 {
+    font-size: $subheader-fontSize;
+  }
+
+  &--title {
+    font-size: $title-fontSize;
+    text-transform: uppercase;
+  }
+
+  &--title-small {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &--paragraph {
+    font-size: $paragraph-fontSize;
+  }
+
+  &--span {
+    font-size: $paragraph-fontSize;
+  }
+
+  &--icon-description {
+    font-size: $icon-fontSize;
+    text-transform: uppercase;
+  }
+
+  &--label {
+    font-size: $label-fontSize;
+  }
+
+  &--primary {
+    color: black;
+  }
+
+  &--secondary {
+    color: white;
+  }
+}
