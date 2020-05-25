@@ -1,0 +1,15 @@
+@import './../../styles/main-styles';
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+
+  @include mobile{
+    flex-direction: column;
+  }
+}
+
+.hero-image{
+  width: 800px;
+  height: 100%;
+}
