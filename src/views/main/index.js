@@ -15,6 +15,12 @@ const Main = () => {
       </div>
       <div className="landing-view__container landing-view__container--left">
         <div className="text-area">
+          <Text type={"header"}>
+            Grzegorz Dokowicz
+          </Text>
+          <Text type={"sub-header"}>
+            Front End Developer
+          </Text>
           <Text type={"paragraph"}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi cum ea est ex facilis nulla pariatur
             quam quas quasi, quibusdam repudiandae sit, tenetur vitae voluptatem voluptatibus voluptatum. Deserunt
