@@ -5,12 +5,12 @@ import Image from "../../components/page-elements/image"
 import ResponsivePageContainer from "../../components/containers/responsive-page-container"
 import Text from "../../components/page-elements/text"
 
-const Main = () => {
+const LandingPage = () => {
   return (
     <ResponsivePageContainer className={"landing-view"}>
       <div className="landing-view__container landing-view__container--right">
         <div className="hero-image">
-          <Image fileName={"HeroImage.png"}/>
+          <Image fileName={"HeroImage"}/>
         </div>
       </div>
       <div className="landing-view__container landing-view__container--left">
@@ -18,7 +18,7 @@ const Main = () => {
           <Text type={"header"}>
             Grzegorz Dokowicz
           </Text>
-          <Text type={"sub-header"}>
+          <Text type={"subheader"}>
             Front End Developer
           </Text>
           <Text type={"paragraph"}>
@@ -33,4 +33,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default LandingPage;

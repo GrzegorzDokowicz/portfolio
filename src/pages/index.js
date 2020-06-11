@@ -1,10 +1,9 @@
 import React from "react"
-
-import Main from "../views/main"
+import App from "../views";
 
 
 const IndexPage = () => (
-  <Main/>
+    <App/>
 )
 
 export default IndexPage

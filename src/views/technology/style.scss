@@ -1,0 +1,14 @@
+@import './../../styles/main-styles';
+
+.technolog-view {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
