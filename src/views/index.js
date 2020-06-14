@@ -1,14 +1,13 @@
-import React from "react"
+import React from 'react';
 
-import LandingPage from "../views/main";
-import TechnologyPage from "../views/technology";
-
+import LandingPage from './main';
+import TechnologyPage from './technology';
 
 const App = () => (
-    <React.Fragment>
-        <LandingPage/>
-        <TechnologyPage/>
-    </React.Fragment>
-)
+  <>
+    <LandingPage />
+    <TechnologyPage />
+  </>
+);
 
-export default App
+export default App;

@@ -1,9 +1,8 @@
-import React from "react"
-import App from "../views";
-
+import React from 'react';
+import App from '../views';
 
 const IndexPage = () => (
-    <App/>
-)
+  <App />
+);
 
-export default IndexPage
+export default IndexPage;

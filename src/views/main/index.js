@@ -1,36 +1,36 @@
-import React from "react"
+import React from 'react';
 
-import "./style.scss"
-import Image from "../../components/page-elements/image"
-import ResponsivePageContainer from "../../components/containers/responsive-page-container"
-import Text from "../../components/page-elements/text"
+import './style.scss';
+import Image from '../../components/page-elements/image';
+import ResponsivePageContainer from '../../components/containers/responsive-page-container';
+import Text from '../../components/page-elements/text';
 
-const LandingPage = () => {
-  return (
-    <ResponsivePageContainer className={"landing-view"}>
-      <div className="landing-view__container landing-view__container--right">
-        <div className="hero-image">
-          <Image fileName={"HeroImage"}/>
-        </div>
+const LandingPage = () => (
+  <ResponsivePageContainer className="landing-view">
+    <div className="landing-view__container landing-view__container--right">
+      <div className="hero-image">
+        <Image fileName="HeroImage" />
       </div>
-      <div className="landing-view__container landing-view__container--left">
-        <div className="text-area">
-          <Text type={"header"}>
-            Grzegorz Dokowicz
-          </Text>
-          <Text type={"subheader"}>
-            Front End Developer
-          </Text>
-          <Text type={"paragraph"}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi cum ea est ex facilis nulla pariatur
-            quam quas quasi, quibusdam repudiandae sit, tenetur vitae voluptatem voluptatibus voluptatum. Deserunt
-            dolores
-            esse est expedita incidunt iusto libero nam optio quidem. Optio.
-          </Text>
-        </div>
+    </div>
+    <div className="landing-view__container landing-view__container--left">
+      <div className="text-area">
+        <Text type="header">
+          Grzegorz Dokowicz
+        </Text>
+        <Text type="subheader">
+          Front End Developer
+        </Text>
+        <Text type="paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Autem commodi cum ea est ex facilis nulla pariatur
+          quam quas quasi, quibusdam repudiandae sit, tenetur
+          vitae voluptatem voluptatibus voluptatum. Deserunt
+          dolores
+          esse est expedita incidunt iusto libero nam optio quidem. Optio.
+        </Text>
       </div>
-    </ResponsivePageContainer>
-  )
-}
+    </div>
+  </ResponsivePageContainer>
+);
 
 export default LandingPage;

@@ -2,10 +2,10 @@ import React from 'react';
 
 import './style.scss';
 
-const ResponsivePageContainer = ({children, className=''}) => {
-  return <div className={`responsive-page-container ${className}`}>
+const ResponsivePageContainer = ({ children, className = '' }) => (
+  <div className={`responsive-page-container ${className}`}>
     {children}
-  </div>;
-};
+  </div>
+);
 
 export default ResponsivePageContainer;

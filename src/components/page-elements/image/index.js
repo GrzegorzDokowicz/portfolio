@@ -1,11 +1,11 @@
-import React from "react"
-import {useStaticQuery, graphql} from "gatsby"
-import Img from "gatsby-image"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import "./style.scss"
+import './style.scss';
 
-const Image = ({fileName, alt = ''}) => {
-    const data = useStaticQuery(graphql`
+const Image = ({ fileName, alt = '' }) => {
+  const data = useStaticQuery(graphql`
         query {
           allFile {
             edges {
@@ -23,34 +23,31 @@ const Image = ({fileName, alt = ''}) => {
             }
           }
         }
-  `)
+  `);
 
-    const targetImage = data.allFile.edges.find(n => {
-        if (n.node.name.includes(fileName)) {
-            return n.node
-        }
-    });
-    if (!targetImage) {
-        return null;
+  const targetImage = data.allFile.edges.filter((n) => n.node.name === fileName);
+  if (!targetImage[0]) {
+    return null;
+  }
+
+  const prepareImageComponent = () => {
+    if (!targetImage[0].node.childImageSharp && targetImage[0].node.extension === 'svg') {
+      return <img src={targetImage[0].node.publicURL} alt={alt} />;
     }
-
-    const prepareImageComponent = () => {
-        if (!targetImage.node.childImageSharp && targetImage.node.extension === 'svg') {
-            return <img src={targetImage.node.publicURL} alt={alt}/>
-        } else {
-            return <Img
-                className={'image'}
-                fluid={targetImage.node.childImageSharp.fluid}
-                alt={alt}/>
-        }
-    }
-
-    console.log('log', targetImage);
     return (
-        <React.Fragment>
-            {prepareImageComponent()}
-        </React.Fragment>
-    )
-}
+      <Img
+        className="image"
+        fluid={targetImage[0].node.childImageSharp.fluid}
+        alt={alt}
+      />
+    );
+  };
+
+  return (
+    <>
+      {prepareImageComponent()}
+    </>
+  );
+};
 
 export default Image;

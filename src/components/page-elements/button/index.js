@@ -2,20 +2,29 @@ import React from 'react';
 import './style.scss';
 import Text from '../text';
 
-const Button = ({children, type = 'default', onClick, style, color='primary'}) => {
-    const clickButton = (event) => {
-        event.preventDefault();
-        if (onClick) {
-            onClick(event);
-        }
-    };
-    const className = (style ? style : []).map(attr => `button--${attr}`).join(' ');
+const Button = ({
+  children,
+  iconButton = false,
+  type = 'button',
+  onClick,
+  style = 'default',
+  color = 'primary',
+}) => {
+  const clickButton = (event) => {
+    event.preventDefault();
+    if (onClick) {
+      onClick(event);
+    }
+  };
+  const className = (style || []).map((attr) => `button--${attr}`).join(' ');
 
-    return <button className={`button button--${type} ${className}`} onClick={clickButton}>
-        <Text type={type === 'icon' ? 'icon-description' : 'button'} color={color}>
-            {children}
-        </Text>
-    </button>;
+  return (
+    <button type={type} className={`button ${className}`} onClick={clickButton}>
+      <Text type={iconButton ? 'icon-description' : 'button-text'} color={color}>
+        {children}
+      </Text>
+    </button>
+  );
 };
 
 export default Button;
