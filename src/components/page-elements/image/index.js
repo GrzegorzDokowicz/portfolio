@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 import './style.scss';
 
-const Image = ({ fileName, alt = '' }) => {
+const Image = ({ fileName, alt = '', className = 'image' }) => {
   const data = useStaticQuery(graphql`
         query {
           allFile {
@@ -32,11 +32,11 @@ const Image = ({ fileName, alt = '' }) => {
 
   const prepareImageComponent = () => {
     if (!targetImage[0].node.childImageSharp && targetImage[0].node.extension === 'svg') {
-      return <img src={targetImage[0].node.publicURL} alt={alt} />;
+      return <img className={className} src={targetImage[0].node.publicURL} alt={alt} />;
     }
     return (
       <Img
-        className="image"
+        className={className}
         fluid={targetImage[0].node.childImageSharp.fluid}
         alt={alt}
       />
