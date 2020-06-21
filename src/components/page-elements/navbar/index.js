@@ -1,17 +1,36 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import uuid from 'react-uuid';
 
 import ResponsiveFullPageContainer from '../../containers/responsive-full-page-container';
 
 import './style.scss';
 
-const Navbar = () => (
-  <ResponsiveFullPageContainer className="navbar">
-    <nav>
-      <AnchorLink to="/#about" stripHash>About Me !</AnchorLink>
-      <AnchorLink to="/#technology" stripHash>Tech</AnchorLink>
-    </nav>
-  </ResponsiveFullPageContainer>
-);
+const Navbar = () => {
+  const routesArray = [{
+    path: 'about',
+    title: 'About Me !',
+  }, {
+    path: 'technology',
+    title: 'Technology',
+  },
+  ];
+
+  return (
+    <ResponsiveFullPageContainer className="navbar">
+      <nav>
+        {routesArray.map((route) => (
+          <AnchorLink
+            key={uuid()}
+            to={`/#${route.path}`}
+            stripHash
+          >
+            {route.title}
+          </AnchorLink>
+        ))}
+      </nav>
+    </ResponsiveFullPageContainer>
+  );
+};
 
 export default Navbar;
