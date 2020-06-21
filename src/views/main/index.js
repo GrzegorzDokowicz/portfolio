@@ -6,7 +6,7 @@ import ResponsivePageContainer from '../../components/containers/responsive-page
 import Text from '../../components/page-atoms/text';
 
 const LandingPage = () => (
-  <ResponsivePageContainer id="main" className="landing-view">
+  <ResponsivePageContainer id="about" className="landing-view">
     <div className="landing-view__container landing-view__container--right">
       <div className="hero-image">
         <Image fileName="HeroImage" />
