@@ -1,1 +1,8 @@
 @import './../../../styles/main-styles';
+
+.image{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: size(1);
+}

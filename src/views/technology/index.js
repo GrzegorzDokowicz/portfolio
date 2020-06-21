@@ -18,6 +18,10 @@ const TechnologyPage = () => {
             }
         }`);
   const prepareLogosNameArray = data.allFile.edges.map((singleEdge) => singleEdge.node.name);
+  const prepareLogoDataObject = prepareLogosNameArray.map((element) => ({
+    fileName: element,
+    labelName: element.split('_').slice(1).toString(),
+  }));
 
   return (
     <ResponsivePageContainer className="technology-view">
@@ -27,7 +31,13 @@ const TechnologyPage = () => {
         </Text>
       </div>
       <div className="technology-view__logos-grid">
-        {prepareLogosNameArray.map((logo) => <Icon iconName={logo} altText={`${logo}-logo`} />)}
+        {prepareLogoDataObject.map((logo) => (
+          <Icon
+            iconName={logo.fileName}
+            label={logo.labelName}
+            altText={`${logo.labelName}__logo`}
+          />
+        ))}
       </div>
     </ResponsivePageContainer>
   );

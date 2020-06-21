@@ -3,8 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import './style.scss';
+import Text from '../text';
 
-const Image = ({ fileName, alt = '', className = 'image' }) => {
+const Image = ({
+  fileName, alt = '', className = 'image__element', label = '',
+}) => {
   const data = useStaticQuery(graphql`
         query {
           allFile {
@@ -44,9 +47,10 @@ const Image = ({ fileName, alt = '', className = 'image' }) => {
   };
 
   return (
-    <>
+    <div className="image">
       {prepareImageComponent()}
-    </>
+      {label !== '' ? <Text type="title-small">{label}</Text> : ''}
+    </div>
   );
 };
 
