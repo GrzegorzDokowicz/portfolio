@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './style.scss';
-import Image from '../../components/page-elements/image';
+import Image from '../../components/page-atoms/image';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
-import Text from '../../components/page-elements/text';
+import Text from '../../components/page-atoms/text';
 
 const LandingPage = () => (
-  <ResponsivePageContainer className="landing-view">
+  <ResponsivePageContainer id="main" className="landing-view">
     <div className="landing-view__container landing-view__container--right">
       <div className="hero-image">
         <Image fileName="HeroImage" />
