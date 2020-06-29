@@ -24,6 +24,7 @@ const Navbar = () => {
             key={uuid()}
             to={`/#${route.path}`}
             stripHash
+            className="navbar__link"
           >
             {route.title}
           </AnchorLink>

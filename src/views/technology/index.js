@@ -18,12 +18,13 @@ const TechnologyPage = () => {
                 }
             }
         }`);
-  const prepareLogosNameArray = data.allFile.edges.map((singleEdge) => singleEdge.node);
-  const prepareLogoDataObject = prepareLogosNameArray.map((element) => ({
-    id: element.id,
-    fileName: element.name,
-    labelName: element.name.split('_').slice(1).toString(),
-  }));
+
+  const prepareLogoDataObject = data.allFile.edges.map((singleEdge) => singleEdge.node)
+    .map((element) => ({
+      id: element.id,
+      fileName: element.name,
+      labelName: element.name.split('_').slice(1).toString(),
+    }));
 
   return (
     <ResponsivePageContainer id="technology" className="technology-view">

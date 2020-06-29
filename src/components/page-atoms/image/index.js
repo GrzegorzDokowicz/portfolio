@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { ReactSVG } from 'react-svg';
 
 import './style.scss';
 import Text from '../text';
@@ -35,7 +36,7 @@ const Image = ({
 
   const prepareImageComponent = () => {
     if (!targetImage[0].node.childImageSharp && targetImage[0].node.extension === 'svg') {
-      return <img className={className} src={targetImage[0].node.publicURL} alt={alt} />;
+      return <ReactSVG className={className} src={targetImage[0].node.publicURL} alt={alt} />;
     }
     return (
       <Img
@@ -49,7 +50,11 @@ const Image = ({
   return (
     <div className="image">
       {prepareImageComponent()}
-      {label !== '' ? <Text type="title-small">{label}</Text> : ''}
+      {label !== '' ? (
+        <div className="image__label">
+          <Text type="title-small">{label}</Text>
+        </div>
+      ) : ''}
     </div>
   );
 };
