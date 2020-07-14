@@ -1,17 +1,107 @@
 @import './../../../styles/main-styles';
 
 .navbar {
+  min-height: size(10);
   width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  position: fixed;
-  padding: size(1);
-  background-color: transparent;
 
-  &__link{
+  @include mobile {
+    justify-content: flex-end;
+  }
+  @include tablet {
+    justify-content: flex-end;
+  }
+
+  &__link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    &-desktop {
+      @include mobile {
+        display: none;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
     color: $text-primary-color;
-    margin: size(1);
-    padding: size(2) 0;
+    margin: size(2);
     text-decoration: none;
   }
+
+  &__hamburger {
+    display: none;
+    outline: none;
+
+    @include mobile() {
+      display: flex;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
+      height: 100%;
+    }
+    @include tablet {
+      display: flex;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
+      height: 100%;
+    }
+  }
+}
+
+.hamburger {
+  &__bars {
+    position: relative;
+    width: size(3);
+    height: 2px;
+    background-color: $hamburger-color;
+    transition: transform 220ms 120ms ease-out, top 150ms 250ms ease-in;
+
+    &:after {
+      @extend %bars-style;
+      top: size(1);
+    }
+
+    &:before {
+      @extend %bars-style;
+      top: size(-1);
+    }
+
+    &--active {
+      transform: rotate(220deg);
+      transition: transform 220ms 120ms ease-in-out, top 100ms 250ms ease-in;
+
+      &:after {
+        @extend %bars-style;
+        top: 0
+      }
+
+      &:before {
+        @extend %bars-style;
+        top: 0;
+        transform: rotate(-90deg);
+        transition: transform 220ms 120ms ease-in-out, top 100ms 250ms ease-in;
+      }
+    }
+  }
+}
+
+%bars-style {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: size(3);
+  height: 2px;
+  background-color: $hamburger-color;
+  transition: transform 220ms 120ms ease-in-out, top 100ms 250ms ease-in;
 }
