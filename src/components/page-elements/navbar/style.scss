@@ -8,9 +8,6 @@
   flex-direction: row;
   align-items: center;
 
-  @include mobile {
-    justify-content: flex-end;
-  }
   @include tablet {
     justify-content: flex-end;
   }
@@ -20,47 +17,67 @@
     display: flex;
     flex-direction: row;
 
-    &-desktop {
-      @include mobile {
-        display: none;
-      }
+
+    &--desktop {
+
       @include tablet {
         display: none;
       }
     }
+
+    &--mobile {
+      @include tablet-landscape{
+        display: none;
+      }
+
+      @include tablet {
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        top:0;
+        left: 0;
+        transform: translateY(-100%);
+        z-index: 1;
+        background-color: $mobileNav-background;
+      }
+    }
   }
+
 
   &__link {
     color: $text-primary-color;
     margin: size(2);
     text-decoration: none;
+
+    &--mobile{
+      color: $text-white;
+    }
   }
 
   &__hamburger {
     display: none;
     outline: none;
+    z-index: 2;
 
-    @include mobile() {
-      display: flex;
-      border: none;
-      background-color: transparent;
-      padding: 0;
-      cursor: pointer;
-      height: 100%;
-    }
     @include tablet {
+      position: fixed;
       display: flex;
       border: none;
       background-color: transparent;
       padding: 0;
       cursor: pointer;
-      height: 100%;
+      height: size(2);
     }
   }
 }
 
 .hamburger {
   &__bars {
+    margin: size(1) 0;
     position: relative;
     width: size(3);
     height: 2px;
