@@ -5,20 +5,17 @@ import Image from '../../components/page-atoms/image';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
 import Text from '../../components/page-atoms/text';
 
-const LandingPage = () => (
-  <ResponsivePageContainer id="about" className="landing-view">
-    <div className="landing-view__container landing-view__container--right">
+const AboutMe = () => (
+  <ResponsivePageContainer id="about" className="about-me">
+    <div className="about-me__container about-me__container--right">
       <div className="hero-image">
         <Image fileName="HeroImage" />
       </div>
     </div>
-    <div className="landing-view__container landing-view__container--left">
+    <div className="about-me__container about-me__container--left">
       <div className="text-area">
         <Text type="header">
-          Grzegorz Dokowicz
-        </Text>
-        <Text type="subheader">
-          Front End Developer
+          About me
         </Text>
         <Text type="paragraph">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -33,4 +30,4 @@ const LandingPage = () => (
   </ResponsivePageContainer>
 );
 
-export default LandingPage;
+export default AboutMe;

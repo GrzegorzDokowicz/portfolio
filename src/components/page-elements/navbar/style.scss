@@ -29,6 +29,12 @@
       @include tablet-landscape{
         display: none;
       }
+      @include desktop{
+        display: none;
+      }
+      @include large-desktop{
+        display: none;
+      }
 
       @include tablet {
         position: fixed;
@@ -54,6 +60,7 @@
     text-decoration: none;
 
     &--mobile{
+      font-size: $font-mobile*2;
       color: $text-white;
     }
   }
