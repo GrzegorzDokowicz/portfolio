@@ -3,8 +3,15 @@
 .responsive-page-container {
   width: 100%;
   padding: 0 5%;
-  height: 100%;
-  background-color: $background-color;
+  height: 100vh;
+
+  &--default {
+    background-color: $background-color;
+  }
+
+  &--dark {
+    background-color: $secondary-color;
+  }
 
   @include mobile {
     margin: 0;

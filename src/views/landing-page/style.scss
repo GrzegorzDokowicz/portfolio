@@ -2,7 +2,7 @@
 
 .landing-view {
   width: 100%;
-  min-height: 500px;
+  min-height: 625px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,7 +14,10 @@
     margin: size(1);
 
     &--right {
+      min-height: 500px;
       display: flex;
+      align-items: center;
+      justify-content: center;
       order: 1;
     }
 
