@@ -13,7 +13,8 @@ const Image = forwardRef(({
   label = '',
   beforeInjection = () => {
   },
-  afterInjection = () => {},
+  afterInjection = () => {
+  },
 },
 ref) => {
   const data = useStaticQuery(graphql`

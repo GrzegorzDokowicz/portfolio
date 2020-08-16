@@ -7,12 +7,12 @@ import Text from '../../components/page-atoms/text';
 
 const LandingPage = () => {
   const getHeroImageElements = () => {
-    const heroIds = [
-      'plant', 'character', 'clouds', 'background_cloud',
+    const heroIDs = [
+      'character', 'top_right', 'bottom_right', 'bottom_left', 'middle_left', 'middle_right', 'background_cloud',
     ];
 
     try {
-      return heroIds.map((id) => {
+      return heroIDs.map((id) => {
         const element = document.getElementById(id); // eslint-disable-line no-undef
 
         if (element) {
@@ -27,9 +27,9 @@ const LandingPage = () => {
   };
 
   return (
-    <ResponsivePageContainer id="landing_page" className="landing-view">
+    <ResponsivePageContainer id="landing_page" className="landing-view" backgroundSVGName="background">
       <div className="landing-view__container landing-view__container--right">
-        <Image fileName="LandingImage" afterInjection={() => getHeroImageElements()} />
+        <Image fileName="LandingImage" afterInjection={() => console.log(getHeroImageElements())} />
       </div>
       <div className="landing-view__container landing-view__container--left">
         <Text type="title">

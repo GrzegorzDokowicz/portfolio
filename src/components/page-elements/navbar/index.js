@@ -3,8 +3,6 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import uuid from 'react-uuid';
 import { gsap, Power1 } from 'gsap';
 
-import ResponsivePageContainer from '../../containers/responsive-page-container';
-
 import './style.scss';
 import Text from '../../page-atoms/text';
 
@@ -90,7 +88,7 @@ const Navbar = () => {
   ));
 
   return (
-    <ResponsivePageContainer className="navbar__container">
+    <div className="navbar__container">
       <nav className="navbar">
 
         <button onClick={handleHamburgerClick} className="navbar__hamburger">
@@ -106,7 +104,7 @@ const Navbar = () => {
         </ul>
 
       </nav>
-    </ResponsivePageContainer>
+    </div>
   );
 };
 
