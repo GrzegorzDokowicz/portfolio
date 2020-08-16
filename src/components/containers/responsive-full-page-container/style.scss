@@ -1,14 +1,13 @@
 @import './../../../styles/main-styles';
 
-.responsive-page-container {
+.responsive-full-page-container {
   width: 100%;
-  padding: 0 5%;
-  height: 100%;
+  padding: 0;
   background-color: $background-color;
 
   @include mobile {
     margin: 0;
-    padding: 0 5%;
+    padding: 0;
   }
 
   @include tablet {

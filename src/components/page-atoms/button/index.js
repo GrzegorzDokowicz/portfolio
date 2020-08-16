@@ -7,7 +7,7 @@ const Button = ({
   iconButton = false,
   type = 'button',
   onClick,
-  style = 'default',
+  style = ['default'],
   color = 'primary',
 }) => {
   const clickButton = (event) => {

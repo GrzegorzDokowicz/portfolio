@@ -1,0 +1,131 @@
+@import './../../../styles/main-styles';
+
+.navbar {
+  min-height: size(10);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include tablet {
+    justify-content: flex-end;
+  }
+
+  &__link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+
+    &--desktop {
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      @include tablet-landscape{
+        display: none;
+      }
+      @include desktop{
+        display: none;
+      }
+      @include large-desktop{
+        display: none;
+      }
+
+      @include tablet {
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        top:0;
+        left: 0;
+        transform: translateY(-100%);
+        z-index: 1;
+        background-color: $mobileNav-background;
+      }
+    }
+  }
+
+
+  &__link {
+    color: $text-primary-color;
+    margin: size(2);
+    text-decoration: none;
+
+    &--mobile{
+      font-size: $font-mobile*2;
+      color: $text-white;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    outline: none;
+    z-index: 2;
+
+    @include tablet {
+      position: fixed;
+      display: flex;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
+      height: size(2);
+    }
+  }
+}
+
+.hamburger {
+  &__bars {
+    margin: size(1) 0;
+    position: relative;
+    width: size(3);
+    height: 2px;
+    background-color: $hamburger-color;
+    transition: transform 220ms 120ms ease-out, top 150ms 250ms ease-in;
+
+    &:after {
+      @extend %bars-style;
+      top: size(1);
+    }
+
+    &:before {
+      @extend %bars-style;
+      top: size(-1);
+    }
+
+    &--active {
+      transform: rotate(220deg);
+      transition: transform 220ms 120ms ease-in-out, top 100ms 250ms ease-in;
+
+      &:after {
+        @extend %bars-style;
+        top: 0
+      }
+
+      &:before {
+        @extend %bars-style;
+        top: 0;
+        transform: rotate(-90deg);
+        transition: transform 220ms 120ms ease-in-out, top 100ms 250ms ease-in;
+      }
+    }
+  }
+}
+
+%bars-style {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: size(3);
+  height: 2px;
+  background-color: $hamburger-color;
+  transition: transform 220ms 120ms ease-in-out, top 100ms 250ms ease-in;
+}

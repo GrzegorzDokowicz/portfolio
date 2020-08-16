@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import './style.scss';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
-import Icon from '../../components/page-elements/icon';
-import Text from '../../components/page-elements/text';
+import Icon from '../../components/page-atoms/icon';
+import Text from '../../components/page-atoms/text';
 
 const TechnologyPage = () => {
   const data = useStaticQuery(graphql`
@@ -12,19 +12,22 @@ const TechnologyPage = () => {
             allFile(filter: {relativeDirectory: {eq: "tech"}}) {
                 edges {
                     node {
+                        id
                         name
                     }
                 }
             }
         }`);
-  const prepareLogosNameArray = data.allFile.edges.map((singleEdge) => singleEdge.node.name);
-  const prepareLogoDataObject = prepareLogosNameArray.map((element) => ({
-    fileName: element,
-    labelName: element.split('_').slice(1).toString(),
-  }));
+
+  const prepareLogoDataObject = data.allFile.edges.map((singleEdge) => singleEdge.node)
+    .map((element) => ({
+      id: element.id,
+      fileName: element.name,
+      labelName: element.name.split('_').slice(1).toString(),
+    }));
 
   return (
-    <ResponsivePageContainer className="technology-view">
+    <ResponsivePageContainer id="technology" className="technology-view">
       <div className="technology-view__header">
         <Text type="header">
           {'Technology I\'ve used in my projects'}
@@ -33,6 +36,7 @@ const TechnologyPage = () => {
       <div className="technology-view__logos-grid">
         {prepareLogoDataObject.map((logo) => (
           <Icon
+            key={logo.id}
             iconName={logo.fileName}
             label={logo.labelName}
             altText={`${logo.labelName}__logo`}
