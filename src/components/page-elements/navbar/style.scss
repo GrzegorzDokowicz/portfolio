@@ -1,9 +1,10 @@
 @import './../../../styles/main-styles';
 
 .navbar {
+  z-index: 1;
   position: absolute;
-  top: size(2);
-  right: size(4);
+  right: 0;
+  padding: size(5) 5%;
   min-height: size(10);
   display: flex;
   flex-direction: row;

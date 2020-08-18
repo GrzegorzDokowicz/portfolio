@@ -85,10 +85,21 @@ const LandingPage = () => {
   };
 
   return (
-    <ResponsivePageContainer id="landing_page" className="landing-view" backgroundSVGName="background">
-      <div className="landing-view__container landing-view__container--right">
-        <Image fileName="LandingImage" afterInjection={() => getHeroImageElements().map((el) => animateElement(el))} />
+    <ResponsivePageContainer id="landing_page" className="landing-view">
+
+      <div className="background-elements">
+        <div className="background-elements__top-cloud">
+          <Image className="nav-cloud" fileName="nav_cloud" />
+        </div>
       </div>
+
+      <div className="landing-view__container landing-view__container--right">
+        <Image
+          fileName="LandingImage"
+          afterInjection={() => getHeroImageElements().map((el) => animateElement(el))}
+        />
+      </div>
+
       <div className="landing-view__container landing-view__container--left">
         <Text type="title">
           Grzegorz Dokowicz
