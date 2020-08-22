@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import uuid from 'react-uuid';
 
 import './style.scss';
@@ -7,20 +6,12 @@ import ResponsivePageContainer from '../../components/containers/responsive-page
 import Icon from '../../components/page-atoms/icon';
 import Text from '../../components/page-atoms/text';
 
-const TechnologyPage = () => {
-  const data = useStaticQuery(graphql`
-        query {
-            allFile(filter: {relativeDirectory: {eq: "tech"}}) {
-                edges {
-                    node {
-                        id
-                        name
-                    }
-                }
-            }
-        }`);
+import getTechnologyLogosNames from '../../data_layer/getTechnologyLogosNames';
 
-  const prepareLogoDataObject = data.allFile.edges.map((singleEdge) => singleEdge.node)
+const TechnologyPage = () => {
+  const [...nodes] = getTechnologyLogosNames();
+
+  const prepareLogoDataObject = nodes.map((singleEdge) => singleEdge.node)
     .map((element) => ({
       id: element.id,
       fileName: element.name,

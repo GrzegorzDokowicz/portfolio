@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { ReactSVG } from 'react-svg';
 
 import './style.scss';
 import Text from '../text';
+
+import getImageData from '../../../data_layer/getImageData';
 
 const Image = forwardRef(({
   fileName,
@@ -17,27 +18,11 @@ const Image = forwardRef(({
   },
 },
 ref) => {
-  const data = useStaticQuery(graphql`
-        query {
-          allFile {
-            edges {
-              node {
-                name
-                extension
-                publicURL
-                childImageSharp {
-                  fluid {
-                    originalName
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
-  `);
+  const [...nodes] = getImageData();
 
-  const targetImage = data.allFile.edges.filter((n) => n.node.name === fileName);
+  const targetImage = nodes.filter((n) => n.node.name === fileName);
+
+  // check if targetImage exist - if not then return null
   if (!targetImage[0]) {
     return null;
   }

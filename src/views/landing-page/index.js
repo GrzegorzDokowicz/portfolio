@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import gsap, { Sine } from 'gsap';
 import uuid from 'react-uuid';
 
@@ -8,22 +7,9 @@ import ResponsivePageContainer from '../../components/containers/responsive-page
 import Image from '../../components/page-atoms/image';
 import Text from '../../components/page-atoms/text';
 
-const LandingPage = () => {
-  const getBackgroundElementsNames = () => {
-    const data = useStaticQuery(graphql`
-    {
-      allFile(filter: {relativeDirectory: {eq: "background_elements/landing_page"}}) {
-        edges {
-          node {
-            name
-          }
-        }
-      }
-    }
-  `);
-    return data.allFile.edges.map((el) => el.node.name);
-  };
+import getBackgroundElementsNames from '../../data_layer/getBackgroundElementsNames';
 
+const LandingPage = () => {
   const getHeroImageElements = () => {
     const heroIDs = [
       'top_right', 'bottom_right', 'bottom_left', 'middle_left', 'middle_right',
