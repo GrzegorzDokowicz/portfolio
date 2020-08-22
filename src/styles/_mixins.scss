@@ -6,7 +6,7 @@
 }
 
 @function mobileSize($x) {
-  @return ($x * 8px)*1, 25;
+  @return ($x * 8px)*1 25px;
 }
 
 @mixin mobile {
