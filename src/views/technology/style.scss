@@ -5,11 +5,30 @@
   min-height: 500px;
   display: flex;
   flex-direction: column;
+  align-content: center;
+  align-items: center;
 
-  &__logos-grid{
-    height: 100%;
+  &__header{
+    margin: size(1);
+    @include tablet{
+      margin: mobileSize(2);
+    }
+  }
+
+  &__logos-grid {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet{
+      width: 50%;
+    }
   }
 
 }

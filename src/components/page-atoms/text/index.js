@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 
 const Text = ({
-  type, children, htmlFor = '', color = 'primary',
+  type, children, htmlFor = '', color = 'black',
 }) => {
   const getClass = (className) => `text text--${color} text--${className}`;
 

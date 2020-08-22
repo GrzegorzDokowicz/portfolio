@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import uuid from 'react-uuid';
 
 import './style.scss';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
@@ -35,12 +36,14 @@ const TechnologyPage = () => {
       </div>
       <div className="technology-view__logos-grid">
         {prepareLogoDataObject.map((logo) => (
-          <Icon
-            key={logo.id}
-            iconName={logo.fileName}
-            label={logo.labelName}
-            altText={`${logo.labelName}__logo`}
-          />
+          <div key={uuid()} className="technology-view__logo">
+            <Icon
+              key={logo.id}
+              iconName={logo.fileName}
+              label={logo.labelName}
+              altText={`${logo.labelName}__logo`}
+            />
+          </div>
         ))}
       </div>
     </ResponsivePageContainer>

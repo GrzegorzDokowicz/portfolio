@@ -1,4 +1,10 @@
-$font-main: "sans-serif";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+$font-main:'Poppins', sans-serif;
+$font-titles: 'Montserrat', sans-serif;
+
+
 
 $font-normal: 14px;
 $font-mobile: 17px;

@@ -15,11 +15,12 @@
 
   @include mobile {
     margin: 0;
-    padding: 0 5%;
+    padding: 0 10%;
   }
 
   @include tablet {
     padding: 0 $tabletPadding;
+    height: 100%;
   }
 
   @media screen and (max-width: $tablet) {

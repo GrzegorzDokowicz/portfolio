@@ -6,7 +6,7 @@ import ResponsivePageContainer from '../../components/containers/responsive-page
 import Text from '../../components/page-atoms/text';
 
 const AboutMe = () => (
-  <ResponsivePageContainer id="about" className="about-me">
+  <ResponsivePageContainer id="about" className="about-me" backgroundColor="dark">
     <div className="about-me__container about-me__container--right">
       <div className="hero-image">
         <Image fileName="HeroImage" />
