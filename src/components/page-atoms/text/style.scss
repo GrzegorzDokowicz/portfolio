@@ -6,19 +6,23 @@
   display: inline-block;
 
   &--h1 {
+    font-family: $font-titles;
     font-size: $header-fontSize;
   }
 
   &--h2 {
+    font-family: $font-titles;
     font-size: $subheader-fontSize;
   }
 
   &--title {
+    font-family: $font-titles;
     font-size: $title-fontSize;
     text-transform: uppercase;
   }
 
   &--title-small {
+    font-family: $font-titles;
     font-size: 18px;
     text-transform: uppercase;
   }
@@ -40,11 +44,11 @@
     font-size: $label-fontSize;
   }
 
-  &--primary {
-    color: black;
+  &--black {
+    color: #000000;
   }
 
-  &--secondary {
-    color: white;
+  &--white {
+    color: #FFFFFF;
   }
 }

@@ -80,7 +80,7 @@ const Navbar = () => {
         stripHash
         className={`navbar__link ${mobile ? 'navbar__link--mobile' : ''}`}
       >
-        <Text type="title" color={mobile ? 'white' : 'primary'}>
+        <Text type="title" color="white">
           {route.title}
         </Text>
       </AnchorLink>
