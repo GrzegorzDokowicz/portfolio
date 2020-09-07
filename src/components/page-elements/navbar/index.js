@@ -23,29 +23,23 @@ const Navbar = () => {
   ];
   const hamburgerRef = useRef(null);
 
+  const gsapConfig = {
+    disabled: {
+      duration: 2,
+      ease: Power1.easeOut,
+      transform: 'translateY(-100%)',
+    },
+    active: {
+      duration: 2,
+      ease: Power1.easeOut,
+      transform: 'translateY(0)',
+    },
+  };
+
   // Mobile navigation animations
   const handleMobileNavigationAnimations = () => {
-    const gsapConfig = {
-      disabled: {
-        duration: 2,
-        ease: Power1.easeOut,
-        transform: 'translateY(-100%)',
-      },
-      active: {
-        duration: 2,
-        ease: Power1.easeOut,
-        transform: 'translateY(0)',
-      },
-    };
-
-    // TODO refactor this ! state => !state
-    if (!isMobileNavbarActive) {
-      setMobileNavbarStatus(true);
-      gsap.to(`.${mobileListClassName}`, gsapConfig.active);
-    } else {
-      setMobileNavbarStatus(false);
-      gsap.to(`.${mobileListClassName}`, gsapConfig.disabled);
-    }
+    gsap.to(`.${mobileListClassName}`, !isMobileNavbarActive ? gsapConfig.active : gsapConfig.disabled);
+    setMobileNavbarStatus((prevState) => !prevState);
   };
 
   // functions which are called when you click on hamburger button
