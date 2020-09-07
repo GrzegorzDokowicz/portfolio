@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { ReactSVG } from 'react-svg';
 
@@ -10,12 +11,10 @@ import getImageData from '../../../data_layer/getImageData';
 const Image = forwardRef(({
   fileName,
   alt = '',
-  className = 'image__element',
+  className,
   label = '',
-  beforeInjection = () => {
-  },
-  afterInjection = () => {
-  },
+  beforeInjection,
+  afterInjection,
 },
 ref) => {
   const [...nodes] = getImageData();
@@ -60,5 +59,20 @@ ref) => {
     </div>
   );
 });
+
+Image.propTypes = {
+  fileName: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  label: PropTypes.string,
+  beforeInjection: PropTypes.func,
+  afterInjection: PropTypes.func,
+};
+Image.defaultProps = {
+  className: 'image__element',
+  label: '',
+  beforeInjection: () => {},
+  afterInjection: () => {},
+};
 
 export default Image;

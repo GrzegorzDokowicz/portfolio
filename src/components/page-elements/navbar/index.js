@@ -37,6 +37,8 @@ const Navbar = () => {
         transform: 'translateY(0)',
       },
     };
+
+    // TODO refactor this ! state => !state
     if (!isMobileNavbarActive) {
       setMobileNavbarStatus(true);
       gsap.to(`.${mobileListClassName}`, gsapConfig.active);

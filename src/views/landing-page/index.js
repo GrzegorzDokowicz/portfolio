@@ -93,13 +93,14 @@ const LandingPage = () => {
       <div className="background-elements">
         {getBackgroundElementsNames().map((el) => (
           <div key={uuid()} className={`background-elements__${el}`}>
-            <Image className={el} fileName={el} />
+            <Image alt={`background-elements__${el}`} className={el} fileName={el} />
           </div>
         ))}
       </div>
 
       <div className="landing-view__container landing-view__container--right">
         <Image
+          alt="Landing image"
           fileName="LandingImage"
           afterInjection={() => getHeroImageElements().map((el) => animateElement(el))}
         />
