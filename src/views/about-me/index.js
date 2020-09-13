@@ -9,7 +9,7 @@ const AboutMe = () => (
   <ResponsivePageContainer id="about" className="about-me" backgroundColor="dark">
     <div className="about-me__container about-me__container--right">
       <div className="hero-image">
-        <Image fileName="HeroImage" />
+        <Image fileName="HeroImage" alt="Hero image" />
       </div>
     </div>
     <div className="about-me__container about-me__container--left">

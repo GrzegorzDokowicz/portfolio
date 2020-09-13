@@ -1,43 +1,27 @@
 import React, { forwardRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { ReactSVG } from 'react-svg';
 
 import './style.scss';
 import Text from '../text';
 
+import getImageData from '../../../data_layer/getImageData';
+
 const Image = forwardRef(({
   fileName,
   alt = '',
-  className = 'image__element',
+  className,
   label = '',
-  beforeInjection = () => {
-  },
-  afterInjection = () => {
-  },
+  beforeInjection,
+  afterInjection,
 },
 ref) => {
-  const data = useStaticQuery(graphql`
-        query {
-          allFile {
-            edges {
-              node {
-                name
-                extension
-                publicURL
-                childImageSharp {
-                  fluid {
-                    originalName
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
-  `);
+  const [...nodes] = getImageData();
 
-  const targetImage = data.allFile.edges.filter((n) => n.node.name === fileName);
+  const targetImage = nodes.filter((n) => n.node.name === fileName);
+
+  // check if targetImage exist - if not then return null
   if (!targetImage[0]) {
     return null;
   }
@@ -75,5 +59,20 @@ ref) => {
     </div>
   );
 });
+
+Image.propTypes = {
+  fileName: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  label: PropTypes.string,
+  beforeInjection: PropTypes.func,
+  afterInjection: PropTypes.func,
+};
+Image.defaultProps = {
+  className: 'image__element',
+  label: '',
+  beforeInjection: () => {},
+  afterInjection: () => {},
+};
 
 export default Image;

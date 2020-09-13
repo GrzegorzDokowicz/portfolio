@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 const Text = ({
-  type, children, htmlFor = '', color = 'black',
+  type, children, htmlFor, color,
 }) => {
   const getClass = (className) => `text text--${color} text--${className}`;
 
@@ -26,6 +27,18 @@ const Text = ({
     default:
       return <span className={getClass('span')}>{children}</span>;
   }
+};
+
+Text.propTypes = {
+  type: PropTypes.string.isRequired,
+  htmlFor: PropTypes.string,
+  color: PropTypes.string,
+  children: PropTypes.string.isRequired,
+};
+
+Text.defaultProps = {
+  htmlFor: '',
+  color: 'black',
 };
 
 export default Text;
