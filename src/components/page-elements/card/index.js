@@ -5,7 +5,11 @@ import Image from '../../page-atoms/image';
 import Text from '../../page-atoms/text';
 
 const Card = ({
-  imageFileName, imageAltText, url, title, bodyText,
+  imageFileName,
+  imageAltText,
+  url,
+  title,
+  bodyText,
 }) => (
   <div className="card">
     <div className="card__image">
@@ -13,15 +17,17 @@ const Card = ({
         <Image alt={imageAltText} fileName={imageFileName} />
       </a>
     </div>
-    <div className="card__title">
-      <Text type="title">
-        {title}
-      </Text>
-    </div>
     <div className="card__body">
-      <Text type="paragraph">
-        {bodyText}
-      </Text>
+      <div className="card__title">
+        <Text type="title">
+          {title}
+        </Text>
+      </div>
+      <div className="card__text">
+        <Text type="paragraph">
+          {bodyText}
+        </Text>
+      </div>
     </div>
   </div>
 );

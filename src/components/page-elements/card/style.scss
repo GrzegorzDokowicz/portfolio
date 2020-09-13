@@ -1,1 +1,36 @@
 @import './../../../styles/main-styles';
+
+.card{
+  margin: size(1);
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+
+  @include tablet{
+    flex-direction: column;
+    margin: mobileSize(1);
+    align-items: center;
+    justify-content: center;
+
+    &__body{
+      margin: mobileSize(1);
+    }
+
+    &__title{
+      margin: mobileSize(1);
+      text-align: center;
+    }
+  }
+
+  &__image{
+    margin: size(1);
+    width: 50%;
+  }
+
+  &__body{
+    margin: size(1);
+    height: 100%
+  }
+
+}

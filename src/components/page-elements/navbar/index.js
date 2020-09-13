@@ -19,6 +19,9 @@ const Navbar = () => {
     }, {
       path: 'technology',
       title: 'Technology',
+    }, {
+      path: 'projects',
+      title: 'Projects',
     },
   ];
   const hamburgerRef = useRef(null);
