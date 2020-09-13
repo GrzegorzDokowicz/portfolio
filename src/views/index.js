@@ -4,6 +4,7 @@ import LandingPage from './landing-page';
 import TechnologyPage from './technology';
 import Navbar from '../components/page-elements/navbar';
 import AboutMe from './about-me';
+import Projects from './projects';
 
 const App = () => (
   <>
@@ -11,6 +12,7 @@ const App = () => (
     <LandingPage />
     <AboutMe />
     <TechnologyPage />
+    <Projects />
   </>
 );
 

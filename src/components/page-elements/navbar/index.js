@@ -84,23 +84,21 @@ const Navbar = () => {
   ));
 
   return (
-    <div className="navbar__container">
-      <nav className="navbar">
+    <nav className="navbar">
 
-        <button onClick={handleHamburgerClick} className="navbar__hamburger">
-          <span ref={hamburgerRef} className="hamburger__bars" />
-        </button>
+      <button onClick={handleHamburgerClick} className="navbar__hamburger">
+        <span ref={hamburgerRef} className="hamburger__bars" />
+      </button>
 
-        <ul className="navbar__link-list navbar__link-list--desktop">
-          {generateNavLinks()}
-        </ul>
+      <ul className="navbar__link-list navbar__link-list--desktop">
+        {generateNavLinks()}
+      </ul>
 
-        <ul className="navbar__link-list navbar__link-list--mobile">
-          {generateNavLinks(true)}
-        </ul>
+      <ul className="navbar__link-list navbar__link-list--mobile">
+        {generateNavLinks(true)}
+      </ul>
 
-      </nav>
-    </div>
+    </nav>
   );
 };
 
