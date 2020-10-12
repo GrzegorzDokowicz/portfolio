@@ -14,10 +14,10 @@ const AboutMe = () => (
     </div>
     <div className="about-me__container about-me__container--left">
       <div className="text-area">
-        <Text type="header">
+        <Text type="header" color="white">
           About me
         </Text>
-        <Text type="paragraph">
+        <Text type="paragraph" color="white">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           Autem commodi cum ea est ex facilis nulla pariatur
           quam quas quasi, quibusdam repudiandae sit, tenetur

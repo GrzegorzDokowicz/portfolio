@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Helmet } from 'react-helmet';
 import LandingPage from './landing-page';
 import TechnologyPage from './technology';
 import Navbar from '../components/page-elements/navbar';
@@ -8,6 +9,7 @@ import Projects from './projects';
 
 const App = () => (
   <>
+    <Helmet title="Grzegorz Dokowicz" />
     <Navbar />
     <LandingPage />
     <AboutMe />

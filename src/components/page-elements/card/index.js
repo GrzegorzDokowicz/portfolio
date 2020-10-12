@@ -10,9 +10,10 @@ const Card = ({
   url,
   title,
   bodyText,
+  imageOnLeft = true,
 }) => (
   <div className="card">
-    <div className="card__image">
+    <div className={`card__image card__image--${imageOnLeft ? 'left' : 'right'}`}>
       <a href={url}>
         <Image alt={imageAltText} fileName={imageFileName} />
       </a>

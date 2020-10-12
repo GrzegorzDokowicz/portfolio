@@ -26,6 +26,17 @@
   &__image{
     margin: size(1);
     width: 50%;
+
+    &--left{
+      order:0
+    }
+    &--right{
+      order:1;
+
+      @include tablet{
+        order: 0;
+      }
+    }
   }
 
   &__body{
