@@ -8,6 +8,7 @@ import Text from '../../page-atoms/text';
 
 const Navbar = () => {
   const [isMobileNavbarActive, setMobileNavbarStatus] = useState(false);
+  const [hamburgerClicked, setHamburgerStatus] = useState(false);
   const mobileListClassName = 'navbar__link-list--mobile';
   const routesArray = [
     {
@@ -48,13 +49,9 @@ const Navbar = () => {
   // functions which are called when you click on hamburger button
   const handleHamburgerClick = () => {
     const activeClassName = 'hamburger__bars--active';
-    if (hamburgerRef && hamburgerRef.current.classList.contains(activeClassName)) {
-      // Hamburger is disabled
-      hamburgerRef.current.classList.remove(activeClassName);
-      handleMobileNavigationAnimations();
-    } else if (hamburgerRef && !hamburgerRef.current.classList.contains(activeClassName)) {
-      // Hamburger is active
-      hamburgerRef.current.classList.add(activeClassName);
+    if (hamburgerRef) {
+      setHamburgerStatus(!hamburgerClicked);
+      hamburgerRef.current.classList.toggle(activeClassName);
       handleMobileNavigationAnimations();
     }
   };
@@ -62,6 +59,7 @@ const Navbar = () => {
   // functions which are called when you click on moblie navigation link
   const handleMobileLinkClick = () => {
     setMobileNavbarStatus(false);
+    setHamburgerStatus(false);
     handleMobileNavigationAnimations();
     handleHamburgerClick();
   };
