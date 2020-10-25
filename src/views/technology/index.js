@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid from 'react-uuid';
 
 import './style.scss';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
@@ -25,18 +24,17 @@ const TechnologyPage = () => {
           {'Technology I\'ve used in my projects'}
         </Text>
       </div>
-      <div className="technology-view__logos-grid">
+      <ul className="technology-view__logos-grid">
         {prepareLogoDataObject.map((logo) => (
-          <div key={uuid()} className="technology-view__logo">
+          <li key={logo.id} className="technology-view__logo">
             <Icon
-              key={logo.id}
               iconName={logo.fileName}
               label={logo.labelName}
               altText={`${logo.labelName}__logo`}
             />
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </ResponsivePageContainer>
   );
 };
