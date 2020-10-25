@@ -3,6 +3,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import uuid from 'react-uuid';
 import { gsap, Power1 } from 'gsap';
 
+import ROUTES from './routes.config';
 import './style.scss';
 import Text from '../../page-atoms/text';
 
@@ -10,38 +11,22 @@ const Navbar = () => {
   const [isMobileNavbarActive, setMobileNavbarStatus] = useState(false);
   const [hamburgerClicked, setHamburgerStatus] = useState(false);
   const mobileListClassName = 'navbar__link-list--mobile';
-  const routesArray = [
-    {
-      path: 'landing_page',
-      title: 'Home',
-    }, {
-      path: 'about',
-      title: 'About Me',
-    }, {
-      path: 'technology',
-      title: 'Technology',
-    }, {
-      path: 'projects',
-      title: 'Projects',
-    },
-  ];
   const hamburgerRef = useRef(null);
-
-  const gsapConfig = {
-    disabled: {
-      duration: 2,
-      ease: Power1.easeOut,
-      transform: 'translateY(-100%)',
-    },
-    active: {
-      duration: 2,
-      ease: Power1.easeOut,
-      transform: 'translateY(0)',
-    },
-  };
 
   // Mobile navigation animations
   const handleMobileNavigationAnimations = () => {
+    const gsapConfig = {
+      disabled: {
+        duration: 2,
+        ease: Power1.easeOut,
+        transform: 'translateY(-100%)',
+      },
+      active: {
+        duration: 2,
+        ease: Power1.easeOut,
+        transform: 'translateY(0)',
+      },
+    };
     gsap.to(`.${mobileListClassName}`, !isMobileNavbarActive ? gsapConfig.active : gsapConfig.disabled);
     setMobileNavbarStatus((prevState) => !prevState);
   };
@@ -64,7 +49,7 @@ const Navbar = () => {
     handleHamburgerClick();
   };
 
-  const generateNavLinks = (mobile = false) => routesArray.map((route) => (
+  const generateNavLinks = (mobile = false) => ROUTES.map((route) => (
     <li
       onClick={() => {
         handleMobileLinkClick();

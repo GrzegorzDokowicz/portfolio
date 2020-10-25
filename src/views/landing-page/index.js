@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid from 'react-uuid';
 
 import './style.scss';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
@@ -35,8 +34,8 @@ const LandingPage = () => {
 
       <div className="background-elements">
         {getBackgroundElementsNames().map((el) => (
-          <div key={uuid()} className={`background-elements__${el}`}>
-            <Image alt={`background-elements__${el}`} className={el} fileName={el} />
+          <div key={el.id} className={`background-elements__${el.name}`}>
+            <Image alt={`background-elements__${el}`} className={el.name} fileName={el.name} />
           </div>
         ))}
       </div>
