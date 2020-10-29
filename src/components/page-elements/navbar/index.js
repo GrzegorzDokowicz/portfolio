@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import uuid from 'react-uuid';
+import uuid from 'react-uuid'; // TODO check if possible to eliminate
 import { gsap, Power1 } from 'gsap';
 
 import ROUTES from './routes.config';
 import './style.scss';
 import Text from '../../page-atoms/text';
+import Image from '../../page-atoms/image';
 
 const Navbar = () => {
   const [isMobileNavbarActive, setMobileNavbarStatus] = useState(false);
@@ -71,6 +72,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+
+      <div className="navbar__logo">
+        <Image alt="site-logo" fileName="Logo" />
+      </div>
 
       <button onClick={handleHamburgerClick} className="navbar__hamburger">
         <span ref={hamburgerRef} className="hamburger__bars" />

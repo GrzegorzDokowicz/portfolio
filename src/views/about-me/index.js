@@ -4,6 +4,8 @@ import './style.scss';
 import Image from '../../components/page-atoms/image';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
 import Text from '../../components/page-atoms/text';
+import IconLink from '../../components/page-atoms/icon-link';
+
 import slideIn from '../../gsap_animations/slideIn';
 
 const AboutMe = () => {
@@ -33,6 +35,10 @@ const AboutMe = () => {
             dolores
             esse est expedita incidunt iusto libero nam optio quidem. Optio.
           </Text>
+          <div className="about-me__links">
+            <IconLink fileName="github-icon" alt="Facebook link" href="#" />
+            <IconLink fileName="linkedin-icon" alt="Facebook link" href="#" />
+          </div>
         </div>
       </div>
     </ResponsivePageContainer>
