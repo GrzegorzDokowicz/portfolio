@@ -9,7 +9,9 @@ import Projects from './projects';
 
 const App = () => (
   <>
-    <Helmet title="Grzegorz Dokowicz" />
+    <Helmet title="Grzegorz Dokowicz">
+      <html lang="en" />
+    </Helmet>
     <Navbar />
     <LandingPage />
     <AboutMe />
