@@ -1,11 +1,12 @@
 @import './../../../styles/main-styles';
 
 .navbar {
+  background-color: $secondary-color;
   z-index: 10;
   position: absolute;
   right: 0;
   width: 100%;
-  padding: size(5) 5%;
+  padding: size(2) 5%;
   min-height: size(10);
   display: flex;
   flex-direction: row;
@@ -13,6 +14,7 @@
   justify-content: space-between;
 
   @include tablet-landscape {
+    background-color: transparent;
     justify-content: flex-end;
   }
 

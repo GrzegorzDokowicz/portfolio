@@ -13,7 +13,7 @@ const AboutMe = () => {
     slideIn(imageSelector, false);
     slideIn(textSelector, true, imageSelector);
   };
-  useEffect(() => animateElements('.hero-image', '.text-area'), []);
+  useEffect(() => animateElements('.about-me__container--right', '.about-me__container--left'), []);
 
   return (
     <ResponsivePageContainer id="about" className="about-me" backgroundColor="dark">
@@ -35,10 +35,11 @@ const AboutMe = () => {
             dolores
             esse est expedita incidunt iusto libero nam optio quidem. Optio.
           </Text>
-          <div className="about-me__links">
-            <IconLink fileName="github-icon" alt="Facebook link" href="#" />
-            <IconLink fileName="linkedin-icon" alt="Facebook link" href="#" />
-          </div>
+        </div>
+        <div className="about-me__links">
+          <IconLink fileName="github-icon" alt="github link" href="#" />
+          <IconLink fileName="linkedin-icon" alt="linkedin link" href="#" />
+          <IconLink fileName="mail-icon" alt="e-mail link" href="#" />
         </div>
       </div>
     </ResponsivePageContainer>

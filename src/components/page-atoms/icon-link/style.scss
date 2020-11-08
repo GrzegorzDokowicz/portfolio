@@ -1,6 +1,12 @@
 @import './../../../styles/main-styles';
 
 .icon-link{
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  max-width: 32px;
+  height: 100%;
+  margin: size(1);
+
+  &--white{
+    color: #FFFFFF;
+  }
 }

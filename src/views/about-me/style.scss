@@ -25,6 +25,7 @@
     &--left {
       order: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
 
       .text-area {
@@ -32,6 +33,12 @@
         flex-direction: column;
       }
     }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   @include tablet {

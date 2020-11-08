@@ -6,7 +6,7 @@ import Image from '../image';
 const ImageIcon = ({
   iconName, altText, label, style,
 }) => {
-  const className = (style || []).map((attr) => `button--${attr}`).join(' ');
+  const className = (style || []).map((attr) => `image-icon--${attr}`).join(' ');
 
   return (
     <Image className={`image-icon ${className}`} fileName={iconName} alt={altText} label={label} />
