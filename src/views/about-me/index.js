@@ -7,6 +7,7 @@ import Text from '../../components/page-atoms/text';
 import IconLink from '../../components/page-atoms/icon-link';
 
 import slideIn from '../../gsap_animations/slideIn';
+import { MAIL_URL, GITHUB_URL, LINKEDIN_URL } from './icons_url_configs';
 
 const AboutMe = () => {
   const animateElements = (imageSelector, textSelector) => {
@@ -37,9 +38,9 @@ const AboutMe = () => {
           </Text>
         </div>
         <div className="about-me__links">
-          <IconLink fileName="github-icon" alt="github link" href="#" />
-          <IconLink fileName="linkedin-icon" alt="linkedin link" href="#" />
-          <IconLink fileName="mail-icon" alt="e-mail link" href="#" />
+          <IconLink fileName="github-icon" targetBlank alt="github link" href={GITHUB_URL} />
+          <IconLink fileName="linkedin-icon" targetBlank alt="linkedin link" href={LINKEDIN_URL} />
+          <IconLink fileName="mail-icon" targetBlank alt="e-mail link" href={MAIL_URL} />
         </div>
       </div>
     </ResponsivePageContainer>
