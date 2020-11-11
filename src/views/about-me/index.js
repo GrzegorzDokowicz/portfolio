@@ -29,12 +29,11 @@ const AboutMe = () => {
             About me
           </Text>
           <Text type="paragraph" color="white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Autem commodi cum ea est ex facilis nulla pariatur
-            quam quas quasi, quibusdam repudiandae sit, tenetur
-            vitae voluptatem voluptatibus voluptatum. Deserunt
-            dolores
-            esse est expedita incidunt iusto libero nam optio quidem. Optio.
+            A hobbyist-programmer, interested in web technologies, living in Poznań, PL.
+            I spent the last 5 years working in the
+            logistics industry, working remotely with international teams,
+            but the past year has made me think about changing my career path and I decided
+            to start my adventure with programming.
           </Text>
         </div>
         <div className="about-me__links">
