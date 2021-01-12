@@ -32,7 +32,6 @@ ref) => {
         <ReactSVG
           className={className}
           src={targetImage[0].node.publicURL}
-          alt={alt}
           afterInjection={afterInjection}
           beforeInjection={beforeInjection}
           ref={ref}

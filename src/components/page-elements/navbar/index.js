@@ -81,11 +81,11 @@ const Navbar = () => {
         <span ref={hamburgerRef} className="hamburger__bars" />
       </button>
 
-      <ul className="navbar__link-list navbar__link-list--desktop">
+      <ul role={'menu'} className="navbar__link-list navbar__link-list--desktop">
         {generateNavLinks()}
       </ul>
 
-      <ul className="navbar__link-list navbar__link-list--mobile">
+      <ul role={'menu'} className="navbar__link-list navbar__link-list--mobile">
         {generateNavLinks(true)}
       </ul>
 

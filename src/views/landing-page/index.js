@@ -50,7 +50,7 @@ const LandingPage = () => {
       <div className="background-elements">
         {getBackgroundElementsNames().map((el) => (
           <div key={el.id} className={`background-elements__${el.name}`}>
-            <Image alt={`background-elements__${el}`} className={el.name} fileName={el.name} />
+            <Image className={el.name} fileName={el.name} />
           </div>
         ))}
       </div>
