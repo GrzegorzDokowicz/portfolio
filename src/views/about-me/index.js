@@ -7,7 +7,7 @@ import Text from '../../components/page-atoms/text';
 import IconLink from '../../components/page-atoms/icon-link';
 
 import slideIn from '../../gsap_animations/slideIn';
-import { MAIL_URL, GITHUB_URL, LINKEDIN_URL } from './icons_url_configs';
+import { MAIL_URL, GITHUB_URL, LINKEDIN_URL } from '../../data_layer/configs/icons_url_configs';
 
 const AboutMe = () => {
   const animateElements = (imageSelector, textSelector) => {

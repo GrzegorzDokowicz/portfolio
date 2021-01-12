@@ -1,10 +1,14 @@
 @import './../../../styles/main-styles';
 
 .icon-link{
-  width: 100%;
-  max-width: 32px;
+  width: 32px;
   height: 100%;
-  margin: size(1);
+  transition: transform ease-out 0.2s;
+
+  &:hover{
+    transition: transform ease-out 0.2s;
+    transform: scale(1.2);
+  }
 
   &--white{
     color: #FFFFFF;

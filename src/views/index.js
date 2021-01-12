@@ -6,6 +6,7 @@ import TechnologyPage from './technology';
 import Navbar from '../components/page-elements/navbar';
 import AboutMe from './about-me';
 import Projects from './projects';
+import Footer from '../components/page-elements/footer';
 
 const App = () => (
   <>
@@ -17,6 +18,7 @@ const App = () => (
     <AboutMe />
     <TechnologyPage />
     <Projects />
+    <Footer />
   </>
 );
 
