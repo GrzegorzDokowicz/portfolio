@@ -61,7 +61,7 @@ ref) => {
 
 Image.propTypes = {
   fileName: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   beforeInjection: PropTypes.func,
@@ -69,6 +69,7 @@ Image.propTypes = {
 };
 Image.defaultProps = {
   className: 'image__element',
+  alt:'',
   label: '',
   beforeInjection: () => {},
   afterInjection: () => {},
