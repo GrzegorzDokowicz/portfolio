@@ -1,6 +1,6 @@
 @import './../../../styles/main-styles';
 
-.icon {
+.image-icon {
   width: size(16);
   height: 100%;
   max-height: 128px;
@@ -12,13 +12,14 @@
     transition: transform ease-out 0.2s;
     transform: translateY(-1*size(1));
 
-    ~ .text {
+    ~ .image__label {
       transition: transform ease-out 0.2s;
       transform: translateY(size(1));
     }
   }
 
-  ~ .text {
+  ~ .image__label {
     transition: transform ease-out 0.2s;
+
   }
 }

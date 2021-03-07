@@ -1,0 +1,20 @@
+@import './../../../styles/main-styles';
+
+#footer{
+  height: 100%;
+  width: 100%;
+
+}
+
+.icons-list{
+  height: 100%;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer-text{
+  text-align: center;
+}

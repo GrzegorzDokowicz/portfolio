@@ -17,9 +17,9 @@ const Text = ({
     case 'title-small':
       return <h3 className={getClass('title-small')}>{children}</h3>;
     case 'icon':
-      return <span className={getClass('icon-description')}>{children}</span>;
+      return <span className={getClass('image-icon-description')}>{children}</span>;
     case 'button':
-      return <span className={getClass('icon-description')}>{children}</span>;
+      return <span className={getClass('image-icon-description')}>{children}</span>;
     case 'paragraph':
       return <p className={getClass('paragraph')}>{children}</p>;
     case 'label':
