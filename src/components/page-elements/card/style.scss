@@ -1,7 +1,6 @@
 @import './../../../styles/main-styles';
 
 .card{
-  margin: size(1);
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -9,9 +8,9 @@
 
   @include tablet{
     flex-direction: column;
-    margin: mobileSize(1);
     align-items: center;
     justify-content: center;
+    height: 100%;
 
     &__body{
       margin: mobileSize(1);

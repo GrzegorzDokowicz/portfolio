@@ -1,0 +1,16 @@
+@import './../../../styles/main-styles';
+
+.icon-link{
+  width: 32px;
+  height: 100%;
+  transition: transform ease-out 0.2s;
+
+  &:hover{
+    transition: transform ease-out 0.2s;
+    transform: scale(1.2);
+  }
+
+  &--white{
+    color: #FFFFFF;
+  }
+}

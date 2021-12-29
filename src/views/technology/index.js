@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 import ResponsivePageContainer from '../../components/containers/responsive-page-container';
-import Icon from '../../components/page-atoms/icon';
+import ImageIcon from '../../components/page-atoms/image-icon';
 import Text from '../../components/page-atoms/text';
 
 import getTechnologyLogosNames from '../../data_layer/getTechnologyLogosNames';
@@ -27,7 +27,7 @@ const TechnologyPage = () => {
       <ul className="technology-view__logos-grid">
         {prepareLogoDataObject.map((logo) => (
           <li key={logo.id} className="technology-view__logo">
-            <Icon
+            <ImageIcon
               iconName={logo.fileName}
               label={logo.labelName}
               altText={`${logo.labelName}__logo`}
