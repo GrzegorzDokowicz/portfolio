@@ -69,7 +69,7 @@ Image.propTypes = {
 };
 Image.defaultProps = {
   className: 'image__element',
-  alt:'',
+  alt: '',
   label: '',
   beforeInjection: () => {},
   afterInjection: () => {},
