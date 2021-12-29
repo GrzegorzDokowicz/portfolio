@@ -5,14 +5,14 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.21.37",
+    "gatsby": "^4.4.0",
     "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-offline": "^3.10.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
-    "gatsby-plugin-sharp": "^2.14.4",
+    "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-sharp": "^2.12.1",
     "gsap": "^3.9.1",
@@ -30,8 +30,8 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "gatsby-plugin-sass": "^2.8.0",
-    "node-sass": "^4.14.1",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "sass": "^1.45.1"
   },
   "keywords": [
     "gatsby"
